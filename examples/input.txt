@@ -1,0 +1,7 @@
+My private key is this
+My private key is this
+import
+yes
+examples/importExaTYPOmple.txt
+examples/importExample.txt
+quit

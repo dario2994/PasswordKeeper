@@ -1,0 +1,7 @@
+*.o
+*.gch
+passwordKeeper
+strSimilarity/*
+
+#stupid gedit
+*~
