@@ -1,7 +1,7 @@
 *.o
 *.gch
 passwordKeeper
-strSimilarity/*
+strSimilarity/main
 
 #stupid gedit
 *~
