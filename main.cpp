@@ -72,13 +72,14 @@ void readAllPass( ) {
 	in.close();
 }
 
-bool login () {
+int login () {
 	privateKey=hiddenQuestionForm("Password:");
 	
 	//DEBUG
-	if( privateKey == "debugdestroy" ) {
+	if( privateKey == "destroy" ) {
 		destroy();
-		cout << "Debug destroy.\n";
+		cout << "All saved passwords have been deleted.\n";
+		return -1;
 	}
 	
 	ifstream in(privateKeyHashPath.c_str());
@@ -101,7 +102,13 @@ int main(){
 	
 	if( access(mainFolderPath.c_str() , F_OK) != 0 ) init();
 	else {
-		while( !login() );
+		cout << "Type the password to login, otherwise type 'destroy' to delete all saved password and quit.\n";
+		int response;
+		while( 1 ){
+			response= login();
+			if( response != 0 ) break;
+		}
+		if( response == -1 ) return 0;
 	}
 	
 	readAllPass();
