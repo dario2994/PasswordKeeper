@@ -3,6 +3,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <cstdlib>
 
 #include "header.hpp"
 using namespace std;
@@ -18,7 +19,7 @@ string questionForm(string question) {
 	cout << question << " ";
 	string answer;
 	getline(cin,answer);
-	//~ cout << "\n";
+	if ( cin.eof()==1 ) exit(0);
 	return answer;
 }
 
@@ -29,6 +30,7 @@ string hiddenQuestionForm(string question) {
 	getline(cin,answer);
 	system("stty echo");
 	cout << "\n";
+	if ( cin.eof()==1 ) exit(0);
 	return answer;
 }
 
