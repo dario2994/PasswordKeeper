@@ -42,6 +42,7 @@ void retrieveAll();
 void importPasswords();
 void exportPasswords();
 void changePrivateKey();
+void choosePrivateKey();
 void destroy ();
 
 void savePrivateKeyHash();

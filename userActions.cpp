@@ -252,6 +252,19 @@ void changePrivateKey() {
 	setPrivateKey( privateKey );
 }
 
+void choosePrivateKey() {
+	string privateKey;
+	while (1) {
+		privateKey = hiddenQuestionForm("Insert the private key, that will bey used as master password for encrypting passwords:");
+		string pswCheck   = hiddenQuestionForm("Insert the private key again:");
+		if( privateKey == pswCheck ) break;
+		else cout << "The second key doesn't correspond with the first. Try again.\n";
+	}
+	
+	system(("mkdir "+mainFolderPath).c_str()); //Creates the folder ~/.passwordKeeper
+	setPrivateKey( privateKey );
+}
+
 void destroy () { //Deletes the folder if present
 	system( ("rm -fr "+mainFolderPath).c_str() );
 }

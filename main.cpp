@@ -48,9 +48,7 @@ void init () {
 	
 	cout << "This is the first time you execute password-keeper.\n\n";
 	
-	system(("mkdir "+mainFolderPath).c_str());
-	
-	changePrivateKey();
+	choosePrivateKey();
 	
 	ofstream listOut(passwordListPath.c_str());
 	listOut << "0\n";
@@ -139,7 +137,7 @@ int main(){
 			bool desBool=decisionForm("Are you sure you want to delete all your saved password and configuration?");
 			if( desBool ) {
 				destroy();
-				cout << "Everything has been deleted.";
+				cout << "Everything has been deleted.\n";
 				return 0;
 			}
 		}
